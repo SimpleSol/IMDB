@@ -1,9 +1,9 @@
 package com.example.leon.imdb.activity;
 
+import android.app.LoaderManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -45,6 +45,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         fab.setOnClickListener(this);
 
         mPresenter = new ApiPresenter(this);
+
     }
 
 
@@ -55,13 +56,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 mPresenter.loadMovie(mEditTextTitle.getText().toString());
                 break;
             case R.id.fab:
-                Snackbar.make(v, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+//                Snackbar.make(v, "Replace with your own action", Snackbar.LENGTH_LONG)
+//                        .setAction("Action", null).show();
+                Intent intent = new Intent(this, MyMoviesActivity.class);
+                startActivity(intent);
         }
     }
 
     @Override
-    public void initialize(Movie movie) {
+    public void fillFields(Movie movie) {
         Intent intent = new Intent(this, MovieActivity.class);
         intent.putExtra(MOVIE_TITLE, movie.getTitle());
         intent.putExtra(YEAR, movie.getYear());
@@ -73,4 +76,5 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mEditTextTitle.setText("");
         startActivity(intent);
     }
+
 }

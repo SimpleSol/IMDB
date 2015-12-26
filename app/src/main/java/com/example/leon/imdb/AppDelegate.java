@@ -12,7 +12,7 @@ import retrofit.Retrofit;
  */
 public class AppDelegate extends Application {
 
-    private static AppDelegate instance;
+    //private static AppDelegate instance;
 
     private static ImdbApi imdbApi;
 
@@ -23,7 +23,7 @@ public class AppDelegate extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        instance = this;
+        //instance = this;
         imdbApi = new Retrofit.Builder()
                 .baseUrl(ImdbApi.ENDPOINT)
                 .addConverterFactory(GsonConverterFactory.create())

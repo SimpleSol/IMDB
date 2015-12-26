@@ -1,13 +1,11 @@
 package com.example.leon.imdb.presenter;
 
 import com.example.leon.imdb.AppDelegate;
-import com.example.leon.imdb.api.ImdbApi;
 import com.example.leon.imdb.contract.MainContract;
 import com.example.leon.imdb.model.Movie;
 
 import retrofit.Call;
 import retrofit.Callback;
-import retrofit.GsonConverterFactory;
 import retrofit.Response;
 import retrofit.Retrofit;
 
@@ -18,8 +16,6 @@ public class ApiPresenter implements MainContract.UserActionListener {
 
     private final MainContract.View mView;
 
-    private Movie mMovie;
-
     public ApiPresenter(MainContract.View view) {
         mView = view;
     }
@@ -27,17 +23,18 @@ public class ApiPresenter implements MainContract.UserActionListener {
 
     @Override
     public void loadMovie(String title) {
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(ImdbApi.ENDPOINT)
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-        ImdbApi imdbApi = retrofit.create(ImdbApi.class);
-        Call<Movie> call = imdbApi.getMovie(title, "full");
+//        Retrofit retrofit = new Retrofit.Builder()
+//                .baseUrl(ImdbApi.ENDPOINT)
+//                .addConverterFactory(GsonConverterFactory.create())
+//                .build();
+//        ImdbApi imdbApi = retrofit.create(ImdbApi.class);
+//        Call<Movie> call = imdbApi.getMovie(title, "full");
+        Call<Movie> call = AppDelegate.getImdbApi().getMovie(title, "full");
         call.enqueue(new Callback<Movie>() {
             @Override
             public void onResponse(Response<Movie> response, Retrofit retrofit) {
                 Movie movie = response.body();
-                mView.initialize(movie);
+                mView.fillFields(movie);
             }
 
             @Override
