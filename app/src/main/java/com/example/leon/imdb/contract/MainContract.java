@@ -8,7 +8,7 @@ import com.example.leon.imdb.model.Movie;
 public interface MainContract {
 
     interface View {
-        void fillFields(Movie movie);
+        void putData(Movie movie);
     }
 
     interface UserActionListener {

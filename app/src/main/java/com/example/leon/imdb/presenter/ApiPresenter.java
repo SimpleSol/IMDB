@@ -34,7 +34,7 @@ public class ApiPresenter implements MainContract.UserActionListener {
             @Override
             public void onResponse(Response<Movie> response, Retrofit retrofit) {
                 Movie movie = response.body();
-                mView.fillFields(movie);
+                mView.putData(movie);
             }
 
             @Override

@@ -6,7 +6,10 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -30,6 +33,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private MainContract.UserActionListener mPresenter;
 
+    public static final String OLOLO = "android.intent.action.MAIN";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,6 +50,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         fab.setOnClickListener(this);
 
         mPresenter = new ApiPresenter(this);
+
 
     }
 
@@ -64,7 +70,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     @Override
-    public void fillFields(Movie movie) {
+    public void putData(Movie movie) {
         Intent intent = new Intent(this, MovieActivity.class);
         intent.putExtra(MOVIE_TITLE, movie.getTitle());
         intent.putExtra(YEAR, movie.getYear());
