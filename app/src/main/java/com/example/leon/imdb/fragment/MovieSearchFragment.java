@@ -18,12 +18,14 @@ import com.squareup.picasso.Picasso;
 /**
  * Created by Leon on 29.12.2015.
  */
-public class MovieFragment extends Fragment implements View.OnClickListener {
+public class MovieSearchFragment extends Fragment implements View.OnClickListener {
+
+    // TODO: 30.12.2015 same view ids
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fmt_movie, container, false);
+        return inflater.inflate(R.layout.fmt_movie_from_search, container, false);
     }
 
     @Override

@@ -30,6 +30,8 @@
                 android:value="com.example.leon.imdb.activity.MainActivity"/>
         </activity>
 
+        <activity android:name=".activity.MovieDatabaseActivity" />
+
         <provider
             android:name=".sqlite.SQLiteProvider"
             android:authorities="${applicationId}"

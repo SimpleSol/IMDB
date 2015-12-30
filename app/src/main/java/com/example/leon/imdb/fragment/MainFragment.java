@@ -66,7 +66,7 @@ public class MainFragment extends Fragment implements View.OnClickListener, Main
 
     @Override
     public void putData(Movie movie) {
-        final MovieFragment movieFragment = new MovieFragment();
+        final MovieSearchFragment movieSearchFragment = new MovieSearchFragment();
         final Bundle bundle = new Bundle();
 
         bundle.putString(Constants.MOVIE_TITLE, movie.getTitle());
@@ -77,12 +77,12 @@ public class MainFragment extends Fragment implements View.OnClickListener, Main
         bundle.putString(Constants.PLOT, movie.getPlot());
         bundle.putString(Constants.POSTER, movie.getPoster());
 
-        movieFragment.setArguments(bundle);
+        movieSearchFragment.setArguments(bundle);
 
         getFragmentManager()
                 .beginTransaction()
-                .addToBackStack(MovieFragment.class.getName())
-                .replace(R.id.frame_main, movieFragment)
+                .addToBackStack(MovieSearchFragment.class.getName())
+                .replace(R.id.frame_main, movieSearchFragment)
                 .commit();
         mEditTextTitle.setText("");
     }

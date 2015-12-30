@@ -12,6 +12,8 @@ import com.example.leon.imdb.fragment.MainFragment;
 public class MainActivity extends AppCompatActivity
         implements FragmentManager.OnBackStackChangedListener {
 
+    // TODO: 30.12.2015 hardcoded strings
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
