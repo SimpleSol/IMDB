@@ -68,12 +68,12 @@ public class MyMoviesActivity extends AppCompatActivity implements LoaderManager
 
     @Override
     public void onItemClick(View childView, int position) {
-        final Cursor cursor = getContentResolver().query(Movie.URI, null, null, null, null);
-
-        Intent intent = new Intent(this, MovieActivity.class);
-        intent.putExtra("POSITION", position);
-        startActivity(intent);
-        cursor.close();
+//        final Cursor cursor = getContentResolver().query(Movie.URI, null, null, null, null);
+//
+//        Intent intent = new Intent(this, MovieActivity.class);
+//        intent.putExtra("POSITION", position);
+//        startActivity(intent);
+//        cursor.close();
     }
 
     @Override

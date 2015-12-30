@@ -11,7 +11,7 @@ import retrofit.http.Query;
  */
 public interface ImdbApi {
 
-    public static final String ENDPOINT = "http://www.omdbapi.com";
+    String ENDPOINT = "http://www.omdbapi.com";
 
     @GET("/")
     Call<Movie> getMovie(@Query("t") String movie, @Query("plot") String plot);

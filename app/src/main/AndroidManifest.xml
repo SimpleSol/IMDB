@@ -22,13 +22,6 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".activity.MovieActivity">
-            android:parentActivityName=".activity.MainActivity"
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.leon.imdb.activity.MainActivity"/>
-        </activity>
-
         <activity android:name=".activity.MyMoviesActivity">
 
             android:parentActivityName=".activity.MainActivity"
